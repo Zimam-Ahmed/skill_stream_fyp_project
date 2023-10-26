@@ -1,0 +1,691 @@
+body {
+    background: linear-gradient(to right, #6bc0e5, #ff6565);
+    padding-bottom: 150px;
+  }
+#username{
+  color: #000;
+  opacity: 50%;
+  font-weight: 500;
+}
+#halfLogo{
+  color: #5a5667;
+  font-size: x-large;
+  font-weight: 700;
+}
+#sHalfLogo{
+  color: #fa4b28;
+}
+#homeSectionOne{
+  width: 50%;
+  background: #cdc5ec;
+  opacity: 80%;
+  border-radius: 15px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  margin-right: 20px;
+}
+#blogOne{
+  padding-left: 20px;
+}
+#bestWay{
+  color: #59b32b;
+  font-weight: bold;
+  display: block;
+}
+.start-now {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.arrow {
+  margin-left: 5px; /* Adjust spacing between text and arrow */
+  font-size: 36px;
+}
+#regCard{
+  width: 50%;
+}
+#secondPostOne{
+  display: flex;
+}
+#aboveimg{
+width: 70%;
+height: 70%;
+background-color: #FFCFCF;
+position: relative;
+right: -350px;
+border-radius: 20px;
+}
+
+#imgContainer{
+  width: 150%;
+  position: relative;
+  right: 210px;
+  top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imgContainer img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+#green{
+  width: 80%;
+  height: 50%;
+  background-color: #289886;
+  border-radius: 20px;
+  position: relative;
+  right: 120px;
+  top: 180px;
+}
+#secondPostTwo{
+  padding: 20px;
+  padding-top: 70px;
+}
+.h1{
+  display: block;
+}
+
+#about{
+  color: #67d72f;
+  font-weight: bold;
+  display: block;
+  font-size: large;
+}
+.point-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  background-color: #67d72f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tick {
+  width: 10px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+
+}
+#pointContainer{
+  display: flex;
+  margin-top: 5px;
+}
+#pointText{
+  font-size: small;
+  padding-left: 5px;
+}
+#benefitsSection{
+  display: flex;
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+#benefitsH1{
+  width: 68%;
+  margin: auto;
+  padding-top: 152px;
+}
+
+#benefitsText{
+  font-size: large;
+  font-weight: 400;
+  padding-left: 5px;
+  margin-top: -4px;
+}
+#detail{
+  width: 60%;
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+#endingText{
+  margin-top: 50px;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  opacity: 70%;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-top: 10px;
+  color: black;
+}
+
+.card a {
+  display: block;
+  margin-top: 20px;
+  color: white;
+  text-decoration: none;
+  background-color: #fa4b28;
+  width: 50%;
+  margin: auto;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  font-weight: 700;
+}
+.card a:hover{
+  color: black;
+}
+#dashHeading{
+  display: inline-block;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+#dashText{
+  text-align: center;
+  margin-top: 20px;
+  opacity: 80%;
+}
+
+#create{
+  background: #fa4b28;
+}
+.from_mg{
+  background: transparent;
+}
+
+
+#innerHeaderContainer{
+  position: fixed;
+  left: 0px;
+}
+
+main{
+  width: 100%;
+  padding: 20px;
+}
+.sidebar{
+  background: white;
+  color: black;
+  height: 100vh;
+  width: 200px;
+  transition: all 0.1s;
+  opacity: 50%;
+  border-radius: 0px 20px 0px 20px;
+
+}
+.top_section{
+  display: flex;
+  align-items:center;
+  padding:20px 15px;
+}
+.logo{
+  font-size: 30px;
+}
+.bars{
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+.link{
+  display: flex;
+  color: black;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.8s;
+}
+.link:hover{
+  background:lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+}
+.active{
+  background: lightskyblue;
+  color: #000;
+}
+.icon, .link_text{
+  font-size: 20px;
+}
+#classCard{
+  width: 10%;
+  background: #000;
+}
+
+
+
+/* TeacherHeader.css */
+.teacher-header {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.teacher-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: black;
+  font-weight: 600;
+  opacity: 80%;
+}
+
+.nav-item {
+  margin: 0 20px;
+  position: relative;
+}
+
+
+
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: black;
+
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  background-color: black;
+  height: 3px;
+}
+.nav-link.active {
+  border-bottom: 3px solid black; /* Change the border color for the active link */
+}
+
+/* TeacherClassScreen.css */
+.teacher-class-screen {
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.class-info {
+  background-image: url('../images/istockphoto-1398308108-170667a.webp');
+  position: relative;
+  background-size: cover; /* Adjust to your needs */
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 300px; 
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+
+.class-name {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.class-name h1{
+  float: right;
+  margin-top: 100px;
+
+}
+
+#class-code-stream{
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.class-details {
+  width: 15%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.code-box {
+  width: 100%;
+  height: 30px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.live-stream {
+  width: 65%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  margin-left: 150px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.start-button {
+  background-color: white; /* Change this to your desired button color */
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  float: right;
+}
+
+.start-button:hover {
+  background-color: #e2f0ff; /* Change this to your desired button hover color */
+}
+
+/*class Card css*/
+
+.class-card {
+  height: 300px;
+  background: linear-gradient(to right, #e4a791, #89c9e1);
+  /*background-image: url('../images/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustr.jpg');*/
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 50px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.class-card:hover {
+  transform: scale(1.05);
+}
+
+.card-header {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card-header h2 {
+  margin: 0;
+}
+
+.card-image {
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*InnerHeader css*/
+
+#innerHeaderContainer {
+  width: 30%;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+.home-link:hover {
+  background-color: #ddd;
+}
+
+.category-heading {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.sublinks {
+  padding: 10px 0;
+}
+
+.class-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+}
+
+.class-link:hover {
+  background-color: #ddd;
+}
+
+
+.workButton{
+  display: block;
+  margin-top: 200px;
+  color: white;
+  text-decoration: none;
+  background-color: #fa4b28;
+  width: 16%;
+  margin-top: 100px;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  font-weight: 700;
+  opacity: 70%;
+}
+.workButton:hover{
+  color: white;
+  opacity: 100%;
+
+}
+
+#classCode{
+  text-align: center;
+  font-weight: 500;
+}
+.code-box{
+  padding-top: 2px;
+}
+#Dashead{
+  float: left;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+
+/* People.css */
+
+.people-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.created-by {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.student-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.student-email {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Style for Teachers and Students sections */
+.teacher-section {
+  margin-bottom: 24px;
+}
+
+.student-section {
+  margin-top: 24px;
+}
+
+#assignmentlink{
+  text-decoration: none;
+  color: #000;
+}
+
+.assign-card {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  background: white;
+  opacity: 70%;
+  border: 5px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer; 
+  padding: 15px;
+  margin-top: 40px;
+  box-shadow: 10px 15px 20px rgb(91, 88, 88);
+  
+}
+
+.class-work-screen{
+  width: 70%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+/* Styles for the classwork card */
+.classwork-card {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px #ccc;
+  opacity: 70%;
+}
+
+/* Styles for the classwork info */
+.classwork-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.classwork-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Styles for the classwork file view */
+.classwork-file {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.classwork-file a {
+  background-color: #fa4b28;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Styles for the file submission form */
+.file-upload-form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.file-upload-form h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+.file-upload-form input[type="file"] {
+  display: none;
+}
+
+.file-upload-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-upload-form button:hover {
+  background-color: #555;
+}
+
+#submission_border{
+  width: 100%;
+  background-color: #000;
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
