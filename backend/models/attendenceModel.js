@@ -1,36 +1,31 @@
 import mongoose from 'mongoose';
 
 const attendanceSchema = new mongoose.Schema({
-  class: {
+  classId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Classroom',
     required: true,
   },
   date: {
     type: Date,
-    required: true,
+    default: Date.now,
   },
-  students: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Classroom.students',
-    },
-  ],
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Classroom.createdBy',
+    ref: 'User',
     required: true,
   },
   status: [
     {
       student: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Classroom.students',
+        email: {
+          type: String,
+          required: true,
+        },
       },
       status: {
         type: String,
         enum: ['Present', 'Absent'],
-        default: 'Present',
+        default: 'Absent',
       },
     },
   ],

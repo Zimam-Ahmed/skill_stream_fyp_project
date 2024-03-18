@@ -17,13 +17,18 @@ const TeacherHeader = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/attendance" className="nav-link">
+            <NavLink to={`/studentAttendance/${classId}`} className="nav-link">
               Attendance
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to={`/people/${classId}`} className="nav-link">
+            <NavLink to={`/stpeople/${classId}`} className="nav-link">
               Students
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to={`/marks/${classId}`} className="nav-link">
+              Marks
             </NavLink>
           </li>
         </ul>

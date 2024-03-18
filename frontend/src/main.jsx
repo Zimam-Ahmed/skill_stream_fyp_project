@@ -10,6 +10,8 @@ import {
 import store from './store';
 import { Provider } from 'react-redux';
 import App from './App.jsx';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/js/dist/dropdown";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import PrivateRoute from './components/PrivateRoute';
@@ -23,13 +25,21 @@ import  TeacherClassScreen from './screens/TeacherClassScreen.jsx';
 import ClassWorkScreen from './screens/ClassWorkScreen.jsx';
 import StudentClassScreen from './screens/StudentClassScreen.jsx';
 import StudentClassViewScreen from './screens/StudentClassViewScreen.jsx';
-import PeopleScreen from './screens/PeopleScreen.jsx'
+import PeopleScreen from './screens/PeopleScreen.jsx';
+import StPeopleScreen from './screens/StPeopleScreen.jsx';
 import AttendenceScreen from './screens/AttendenceScreen.jsx';
 import StudentClassWorkScreen from './screens/StudentClassWorkScreen.jsx';
 import ClassWorkSubmissionScreen from './screens/ClassWorkSubmissionScreen';
 import GetClassWorkScreen from './screens/GetClassWorkScreen.jsx';
 import ViewSubmission from './screens/ViewSubmission.jsx';
 import DownloadSubmissionScreen from './screens/DownloadSubmissionScreen';
+import PathfindingVisualizer from "./pathfindingVisualizer/pathfindingVisualizer";
+import SortVisualizer from '/sorting/visualizer.jsx';
+import StudentAttendance from './components/StudentAttendence.jsx';
+import VideoClassScreen from './screens/VideoClassScreen';
+import './sorting.css';
+import MarksScreen from './screens/MarksScreen.jsx';
+
 
 const router =  createBrowserRouter(
   createRoutesFromElements(
@@ -49,12 +59,18 @@ const router =  createBrowserRouter(
         <Route path='/studentClasses'  element={<StudentClassScreen/>}/>
         <Route path='/studentClassView/:classId'  element={<StudentClassViewScreen/>}/>
         <Route path='/people/:classId'  element={<PeopleScreen/>}/>
+        <Route path='/stpeople/:classId'  element={<StPeopleScreen/>}/>
         <Route path='/attendence/:classId'  element={<AttendenceScreen/>}/>
         <Route path='/studentClassWork/:classId'  element={<StudentClassWorkScreen/>}/>
         <Route path='/ClassWorkSubmission/:classworkId'  element={<ClassWorkSubmissionScreen/>}/>
         <Route path='/submission/:classworkId'  element={<GetClassWorkScreen/>}/>
         <Route path='/view-submission/:classworkId/:filename'  element={<ViewSubmission/>}/>
-        <Route path='/download-submission/:classworkId'  element={<DownloadSubmissionScreen/>}/>
+        <Route path='/download-submission/:classworkId'  element={<DownloadSubmissionScreen/>}/>        
+        <Route path='/studentAttendance/:classId'  element={<StudentAttendance/>}/>
+        <Route path='/path-finder' element={<PathfindingVisualizer/>}/>
+        <Route path='/sortvisualize' element={<SortVisualizer/>}/>
+        <Route path='/videoCall' element={<VideoClassScreen/>}/>
+        <Route path='/marks/:classId' element={<MarksScreen/>}/>
 
       </Route>
     </Route>

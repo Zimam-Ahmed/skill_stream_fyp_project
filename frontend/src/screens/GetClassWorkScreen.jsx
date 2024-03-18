@@ -3,6 +3,7 @@ import axios from 'axios';
 import InnerHeader from '../components/InnerHeader.jsx';
 import { useParams } from 'react-router-dom'; // Import useParams
 import GetClassWork from '../components/GetClassWork.jsx';
+import { FaExclamationCircle } from 'react-icons/fa';
 
 function GetClassWorkScreen() {
   const { classworkId } = useParams(); // Get the class ID from the URL
@@ -25,7 +26,10 @@ function GetClassWorkScreen() {
     <div>
         <div className="class-cards">
           {submission.length === 0 ? (
-            <p>No submission Yet</p>
+          <div className="error-container">
+            <FaExclamationCircle className="error-icon" />
+          <p className="error-message">No submission Yet</p>
+        </div>
           ) : (
             submission.map((submission) => (
               <GetClassWork key={submission._id} classWorkData={submission} classworkId={classworkId} />

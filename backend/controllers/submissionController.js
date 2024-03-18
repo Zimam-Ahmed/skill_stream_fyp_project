@@ -131,7 +131,48 @@ const viewSubmissionFile = async (req, res) => {
   }
 };
 
+const updateObtainedPointsForSubmission = asyncHandler(async (req, res) => {
+  const { classworkId, filename } = req.params;
+  const { obtainedPoints } = req.body;
+  
+  console.log('Received obtainedPoints:', obtainedPoints);
+
+  try {
+    // Find the submission based on classworkId and filename
+    const submission = await Submission.findOne({ classworkId, file: filename });
+
+    if (!submission) {
+      return res.status(404).json({ message: 'Submission not found' });
+    }
+
+    // Update obtainedPoints for the found submission
+    submission.obtainedPoints = obtainedPoints;
+    await submission.save();
+
+    res.status(200).json({ message: 'Obtained points for submission updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 
-export { createSubmission, createSubmissionController, checkPreviousSubmission, getSubmissionsForClass, viewSubmissionFile, downloadSubmissionFile };
+const getSubmissionsForUser = asyncHandler(async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    const submissions = await Submission.find({ studentId: userId }).populate('classworkId', 'title');
+
+
+    res.status(200).json(submissions);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
+
+export { createSubmission, createSubmissionController, checkPreviousSubmission, getSubmissionsForClass, viewSubmissionFile, downloadSubmissionFile, updateObtainedPointsForSubmission, getSubmissionsForUser  };
 

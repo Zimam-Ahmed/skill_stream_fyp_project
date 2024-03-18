@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FaUserTie, FaUserGraduate } from 'react-icons/fa'; // Import Font Awesome icons
+import { FaUserTie, FaUserGraduate, FaExclamationCircle } from 'react-icons/fa'; // Import Font Awesome icons
 
 const People = ({ createdBy, students }) => {
   const [studentDetails, setStudentDetails] = useState([]);
@@ -42,7 +42,10 @@ const People = ({ createdBy, students }) => {
               </li>
             ))
           ) : (
-            <p>No students joined this class.</p>
+            <div className="error-message">
+            <FaExclamationCircle className="error-icon" />
+            <p>Oops! It seems no one joined this class yet.</p>
+          </div>
           )}
         </ul>
       </div>

@@ -3,10 +3,9 @@ import {
     FaHome,
     FaChalkboardTeacher,
     FaUsers,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-
 
 const InnerHeader = ({ children }) => {
     const [userCreatedClasses, setUserCreatedClasses] = useState([]);
@@ -35,15 +34,15 @@ const InnerHeader = ({ children }) => {
     }, []);
 
     return (
-        <div id='innerHeaderContainer'>
-            <div className='sidebar'>
+        <div id="innerHeaderContainer">
+            <div className="sidebar">
                 <NavLink to="/dashboard" className="home-link">
                     <FaHome />
                     <span>Home</span>
                 </NavLink>
-                
+
                 <div className="category-heading">Teaching</div>
-                <div className="sublinks">
+                <div className="sublinks scrollable">
                     {userCreatedClasses.map((item, index) => (
                         <NavLink to={`/teacherClass/${item._id}`} key={index} className="class-link">
                             <span>{item.name}</span>
@@ -51,7 +50,7 @@ const InnerHeader = ({ children }) => {
                     ))}
                 </div>
                 <div className="category-heading">Enrolled</div>
-                <div className="sublinks">
+                <div className="sublinks scrollable">
                     {userJoinedClasses.map((item, index) => (
                         <NavLink to={`/studentClassView/${item._id}`} key={index} className="class-link">
                             <span>{item.name}</span>
@@ -59,7 +58,7 @@ const InnerHeader = ({ children }) => {
                     ))}
                 </div>
             </div>
-            <main>{children}</main>
+            
         </div>
     );
 };

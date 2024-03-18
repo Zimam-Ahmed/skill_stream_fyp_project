@@ -33,35 +33,48 @@ const createClassWorkController = asyncHandler(async (req, res) => {
   try {
     if (req.file) {
       const { title, discription, type, points, duedate, classId } = req.body;
-       // Assuming the classId is in the route params
+      // Assuming the classId is in the route params
       const createdBy = req.user._id;
 
-      const parsedDueDate = moment(duedate, 'DD/MM/YYYY').toDate();
-      
-      const classwork = await Classwork.create({
-        title,
-        discription,
-        type,
-        points,
-        classId,
-        createdBy,
-        duedate: parsedDueDate,
-        file: req.file.filename,
-      });
+      try {
+        // Use the provided date directly, assuming it's already in the correct format
+        const parsedDueDate = new Date(duedate);
+        
+        if (isNaN(parsedDueDate.getTime())) {
+          // If parsing fails, log an error and respond with a 400 status
+          console.error('Invalid date format:', duedate);
+          return res.status(400).json({ message: 'Invalid date format' });
+        }
 
-      res.status(201).json({
-        _id: classwork._id,
-        title: classwork.title,
-        discription: classwork.discription,
-        type: classwork.type,
-        points: classwork.points,
-        classId: classwork.classId,
-        createdBy: classwork.createdBy,
-        duedate: classwork.duedate,
-        file: {
-          filename: req.file.filename,
-        },
-      });
+        // Continue with creating the classwork
+        const classwork = await Classwork.create({
+          title,
+          discription,
+          type,
+          points,
+          classId,
+          createdBy,
+          duedate: parsedDueDate,
+          file: req.file.filename,
+        });
+
+        res.status(201).json({
+          _id: classwork._id,
+          title: classwork.title,
+          discription: classwork.discription,
+          type: classwork.type,
+          points: classwork.points,
+          classId: classwork.classId,
+          createdBy: classwork.createdBy,
+          duedate: classwork.duedate,
+          file: {
+            filename: req.file.filename,
+          },
+        });
+      } catch (error) {
+        console.error('Error parsing due date:', error);
+        res.status(500).json({ message: 'Server error' });
+      }
     } else {
       res.status(400).json({ message: 'No file provided' });
     }
@@ -70,7 +83,6 @@ const createClassWorkController = asyncHandler(async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
 // Controller function to get classwork data by class ID
 const getClassworksByClassId = asyncHandler(async (req, res) => {
   const { classId } = req.params;

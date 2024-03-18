@@ -47,6 +47,7 @@ function ClassWorkSubmissionScreen() {
           <p>No classwork selected.</p>
         )}
       </div>
+      
     </>
   );
 }

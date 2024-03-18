@@ -16,6 +16,9 @@ const classroomSchema = new mongoose.Schema({
     required: true,
     unique: true, // Ensures the code is unique
   },
+  link: {
+    type: String,
+  },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', // Reference to the User model

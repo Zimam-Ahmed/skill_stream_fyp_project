@@ -15,6 +15,9 @@ const submissionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  obtainedPoints: {
+    type: Number,
+  },
   file: {
     type: String, 
     required: true,

@@ -17,7 +17,14 @@ export const classApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: data
             }),
+        }), 
+        createOrUpdateLink: builder.mutation({
+            query: ({classId, link}) => ({
+                url: `${CLASSROOM_URL}/${classId}/link`,
+                method: 'POST',
+                body: { link }
+            }),
         }),       
     }),
 });
-export const{ useCreateClassMutation, useJoinClassMutation } = classApiSlice; 
+export const{ useCreateClassMutation, useJoinClassMutation, useCreateOrUpdateLinkMutation } = classApiSlice; 

@@ -2,6 +2,9 @@ body {
     background: linear-gradient(to right, #6bc0e5, #ff6565);
     padding-bottom: 150px;
   }
+.container{
+  width: 80%;
+}
 #username{
   color: #000;
   opacity: 50%;
@@ -205,7 +208,9 @@ border-radius: 20px;
   align-items: center;
   justify-content: center;
   padding-top: 50px;
+  padding-left: 7%;
 }
+
 #dashText{
   text-align: center;
   margin-top: 20px;
@@ -221,19 +226,20 @@ border-radius: 20px;
 
 
 #innerHeaderContainer{
+  border-radius: 20px;
   position: fixed;
   left: 0px;
+  opacity: 80%;
+  
 }
 
-main{
-  width: 100%;
-  padding: 20px;
-}
-.sidebar{
-  background: white;
+
+.sidebar::after{
+  border-radius: 20px;
   color: black;
   height: 100vh;
   width: 200px;
+  opacity: 70%;
   transition: all 0.1s;
   opacity: 50%;
   border-radius: 0px 20px 0px 20px;
@@ -265,8 +271,7 @@ main{
   transition: all 0.5s;
 }
 .active{
-  background: lightskyblue;
-  color: #000;
+  color: black;
 }
 .icon, .link_text{
   font-size: 20px;
@@ -342,25 +347,26 @@ main{
 }
 
 .class-info {
-  background-image: url('../images/istockphoto-1398308108-170667a.webp');
+  background-image: url('../images/Class.jpg');
   position: relative;
+  margin-left: 05%;
   background-size: cover; /* Adjust to your needs */
   background-repeat: no-repeat;
   background-position: center center;
-  width: 100%;
-  height: 300px; 
+  width: 85%;
+  height: 220px; 
   color: white;
   border-radius: 20px;
   padding: 40px;
+  margin: auto;
 }
-
 
 .class-name {
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
 }
 .class-name h1{
-  float: right;
+  float: left;
   margin-top: 100px;
 
 }
@@ -377,11 +383,16 @@ main{
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   margin-top: 15px;
-  margin-left: 35px;
+  margin-left: 60px;
   justify-content: center;
   align-items: center;
 }
-
+.class-details:hover{
+  color: #000;
+}
+.class-details button {
+  color: #000;
+}
 .code-box {
   width: 100%;
   height: 30px;
@@ -396,7 +407,7 @@ main{
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
-  margin-left: 150px;
+  margin-left: 10%;
 }
 
 h1, h2 {
@@ -422,25 +433,29 @@ h1, h2 {
 /*class Card css*/
 
 .class-card {
+  width: 80%;
+  margin: auto;
   height: 300px;
   background: linear-gradient(to right, #e4a791, #89c9e1);
   /*background-image: url('../images/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustr.jpg');*/
   border: 1px solid #ccc;
   border-radius: 20px;
   cursor: pointer;
+  color: #252424;
   transition: transform 0.2s;
   padding: 50px;
-  margin: 10px;
+  margin-bottom: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .class-card:hover {
   transform: scale(1.05);
+  color: #000;
 }
 
 .card-header {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #000;
   color: #fff;
 }
 
@@ -462,33 +477,45 @@ h1, h2 {
 
 /*InnerHeader css*/
 
-#innerHeaderContainer {
-  width: 30%;
-  display: flex;
+
+.sublinks.scrollable {
+  max-height: 300px; /* Set the maximum height here */
+  overflow-y: auto;
+  border-radius: 20px ;
 }
+
 
 .sidebar {
   background-color: #f2f2f2;
   height: 100vh;
   overflow-y: auto;
+  border-radius: 10px;
 }
 
 .home-link {
+  left: 0px;
+  top: 55px;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  background: linear-gradient(to right, #555555, #89c9e1);
+  color: white;
   padding: 10px 20px;
   font-size: 18px;
   border-bottom: 1px solid #ccc;
+  border-radius: 0px 10px 0px 0px;
 }
 
 .home-link:hover {
   background-color: #ddd;
+  color: black;
 }
 
-.category-heading {
-  background-color: #333;
+.category-heading {    
+  background: linear-gradient(to right, #667f8a, #fb9999);
+  border-radius: 10px;
+  margin: 5px;
+  margin-top: 10px;
   color: #fff;
   padding: 10px 20px;
   font-weight: bold;
@@ -507,6 +534,7 @@ h1, h2 {
 
 .class-link:hover {
   background-color: #ddd;
+  color: #000;
 }
 
 
@@ -522,6 +550,8 @@ h1, h2 {
   padding: 10px 20px 10px 20px;
   font-weight: 700;
   opacity: 70%;
+  position: relative;
+  left: 200px;
 }
 .workButton:hover{
   color: white;
@@ -546,11 +576,15 @@ h1, h2 {
 /* People.css */
 
 .people-container {
+  width: 70%;
+  margin: auto;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 16px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+ opacity: 90%;
 }
 
 .section-heading {
@@ -682,10 +716,177 @@ h1, h2 {
 }
 
 #submission_border{
-  width: 100%;
+  width: 80%;
+  margin: auto;
   background-color: #000;
   height: 1px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
+.attendance-container {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.attendance-table th {
+  background-color: #f0f0f0;
+}
+
+.submit-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #fa4b28;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #fa4b28;
+}
+
+
+#joinCall{
+  width: 107px;
+  margin-top: 20px;
+  background-color: rgb(83, 83, 83);
+}
+#videoCamera{
+  height: inherit;  
+}
+
+#datepicker {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+#datepicker:hover {
+  border-color: #6c757d;
+}
+
+#datepicker:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#dowloadButton:hover{
+ color: black;
+}
+.error-message {
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.error-icon {
+  color: #ff0000; /* Set the color of the error icon as needed */
+  font-size: 2em; /* Adjust the font size of the icon */
+  margin-bottom: 10px; /* Add space between the icon and the text */
+}
+
+/* Marks Css */
+#marksContainer{
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  color: #000;
+  opacity: 70%;
+}
+
+.marks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.marks-table th, .marks-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.marks-table th {
+  background-color: #f2f2f2;
+}
+
+
+.error-icon {
+  position: relative;
+  left: 48%;
+  right: 50%;
+  top: 184px;
+  font-size: 36px;
+  color: red;
+}
+
+.error-message {
+  font-size: 18px;
+  color: black;
+}
+
+#videoContainer{
+  margin-top: 100px;
+  width: 50%;
+  margin: auto;
+}
+
+#videoSection{
+  background:  linear-gradient(to right, #667f8a, #fb9999);
+  opacity: 80%;
+  border-radius: 15px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  margin-right: 20px;
+}
+
+.live-stream-link {
+  position: relative;
+  right: -30.6%;
+  width: 65%;
+  margin-top: 20px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  
+}
+#link-input{
+  width: 80%;
+  height: 30px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+}

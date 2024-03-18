@@ -12,6 +12,7 @@ import { setSubmissionInfo } from '../slices/authSlice';
 import { useParams } from 'react-router-dom';
 
 const ClassWorkSubmission = ({ classWorkData, downloadFile }) => {
+
   const { classworkId } = useParams();
   const [file, setFile] = useState(null);
   const [isFileUploaded, setIsFileUploaded] = useState(false); // Add this state
@@ -42,7 +43,7 @@ const ClassWorkSubmission = ({ classWorkData, downloadFile }) => {
       toast.error(err?.data?.message || err.error);
     }
   };
-
+  const formattedDueDate = new Date(classWorkData.duedate).toLocaleDateString('en-US');
   return (
     <div className="class-work-screen">
       <div className="classwork-card">
@@ -51,13 +52,14 @@ const ClassWorkSubmission = ({ classWorkData, downloadFile }) => {
           <p>Type: {classWorkData.type}</p>
           <p>Description: {classWorkData.discription}</p>
           <p>Points: {classWorkData.points}</p>
-          <p>Due Date: {classWorkData.duedate}</p>
+          <p>Due Date: {formattedDueDate}</p>
         </div>
 
         <div className="classwork-file">
           <a
             href={`javascript:void(0)`}
             onClick={() => downloadFile(classWorkData.file)}
+            id='dowloadButton'
           >
             Download File: {classWorkData.file}
           </a>
@@ -87,7 +89,7 @@ const ClassWorkSubmission = ({ classWorkData, downloadFile }) => {
               id="create"
               disabled={isFileUploaded}
             >
-              Create
+              Submit
             </Button>
           </Form>
         </FormContainer>

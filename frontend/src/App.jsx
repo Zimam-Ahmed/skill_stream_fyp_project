@@ -7,9 +7,9 @@ import { Container } from "react-bootstrap";
 const App = () => {
   return(
     <>
-    <Header/>
+    <Header title= "Skill"/>
     <ToastContainer/>
-    <Container>
+    <Container id="container">
     <Outlet/> 
     </Container>
     </>

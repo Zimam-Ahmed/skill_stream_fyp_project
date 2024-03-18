@@ -174,5 +174,27 @@ const getStudentsByIds = asyncHandler(async (req, res) => {
   }
 });
 
+const createOrUpdateLink = asyncHandler(async (req, res) => {
+  const classId = req.params.classId; // Get the classId from the URL parameter
+  const { link } = req.body;
+  try {
+    // Fetch the class by ID
+    const classroom = await Classroom.findById(classId);
 
-export { createClass, getAllClassrooms, getUserClassrooms, joinClass, getUserJoinedClasses, getStudentClassDetails, getClassDetailsById, getStudentsByIds };
+    if (!classroom) {
+      res.status(404);
+      throw new Error('Class not found');
+    }
+
+    // Update or create the link
+    classroom.link = link;
+    await classroom.save();
+
+    res.status(200).json({ message: 'Link updated or created successfully', link: classroom.link });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+export { createClass, getAllClassrooms, getUserClassrooms, joinClass, getUserJoinedClasses, getStudentClassDetails, getClassDetailsById, getStudentsByIds, createOrUpdateLink };

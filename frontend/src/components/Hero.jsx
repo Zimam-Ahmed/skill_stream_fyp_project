@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
       </div>
         <Card className='p-5 d-flex flex-column align-items-center bg-transparent' id='regCard'>
-          <h1 className='text-center mb-4'>Skill Stream Authentication</h1>
+          <h1 className='text-center mb-4'>Classroom Plus Authentication</h1>
           <p className='text-center mb-4'>
             This is a boilerplate for MERN authentication that stores a JWT in
             an HTTP-Only cookie. It also uses Redux Toolkit and the React
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
         <div id='secondPostTwo'>
         <span id='about'>About US</span>
-        <h2>Welcome to <span id='halfLogo'>Skill</span><span id='sHalfLogo'> Stream</span></h2>
+        <h2>Welcome to <span id='halfLogo'>Classroom</span><span id='sHalfLogo'> Plus</span></h2>
         <p>Our web-based application aims to revolutionize <br></br>online learning by providing a comprehensive<br></br> platform for students and educators.</p>
         <ul class="point-list">
           <div id='pointContainer'>
@@ -114,7 +114,7 @@ const Hero = () => {
         
       </Container>
       
-      <span id='endingText'>© 2023 Your Learning Platform Skill Stream. All rights reserved.</span>
+      <span id='endingText'>© 2023 Your Learning Platform Classroom Plus. All rights reserved.</span>
     </div>
   );
 };

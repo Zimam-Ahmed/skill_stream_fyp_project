@@ -8,7 +8,7 @@ import { logout } from '../slices/authSlice';
 import '../../public/assets/css/style.css';
 
  
-const Header = () => {
+const Header = (props) => {
   const { userInfo } = useSelector((state) => state.auth);
   
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const logoutHandler = async () => {
       <Navbar variant='dark' expand='lg' collapseOnSelect >
         <Container>
         <LinkContainer to='/'>
-          <Navbar.Brand><span id='halfLogo'>Skill</span><span id='sHalfLogo'> Stream</span></Navbar.Brand>
+          <Navbar.Brand><span id='halfLogo'>{props.title}</span><span id='sHalfLogo'> Stream</span></Navbar.Brand>
         </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

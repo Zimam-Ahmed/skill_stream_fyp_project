@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { createClass, getAllClassrooms, getUserClassrooms, joinClass, getUserJoinedClasses, getStudentClassDetails, getClassDetailsById, getStudentsByIds } from '../controllers/classController.js';
+import { createClass, getAllClassrooms, getUserClassrooms, joinClass, getUserJoinedClasses, getStudentClassDetails, getClassDetailsById, getStudentsByIds, createOrUpdateLink } from '../controllers/classController.js';
 import { protect } from '../middlewares/authMiddleware.js';
 
 router.post('/',createClass); 
@@ -27,6 +27,6 @@ router.get('/:id', protect, getClassDetailsById);
 // Route to get student details by their IDs
 router.post('/students-by-ids', protect, getStudentsByIds);
 
-
+router.post('/:classId/link', protect, createOrUpdateLink);
 
 export default router;

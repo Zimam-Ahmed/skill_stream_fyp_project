@@ -14,6 +14,11 @@ import { setClassWorkInfo } from '../slices/authSlice';
 import { useParams } from 'react-router-dom';
 import TeacherClassWork from '../components/TeacherClassWork';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import moment from 'moment';
+
+
 
 const ClassWorkScreen = () => {
   const { classId } = useParams(); 
@@ -24,7 +29,7 @@ const ClassWorkScreen = () => {
   const [discription, setDiscription] = useState('');
   const [type, setType] = useState('');
   const [points, setPoints] = useState('');
-  const [duedate, setDuedate] = useState('');
+  const [duedate, setDuedate] = useState(null);
   
   // Update: Added file state to handle file data
   const [file, setFile] = useState(null);
@@ -35,6 +40,18 @@ const ClassWorkScreen = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   const [createClassWork, { isLoading }] = useCreateClassWorkMutation();
+
+  const [isFormButtonDisabled, setFormButtonDisabled] = useState(false);
+
+  const handleDateChange = (date) => {
+    // Ensure that 'date' is a valid JavaScript Date object
+    if (moment(date, 'DD/MM/YYYY', true).isValid()) {
+      setDuedate(date);
+    } else {
+      // Handle the case when the date is invalid (you may show an error message)
+      console.error('Invalid date format');
+    }
+  };
 
   const handleFileInputChange = (e) => {
     // Update: Store the selected file
@@ -89,6 +106,7 @@ const ClassWorkScreen = () => {
       dispatch(setClassWorkInfo({ ...res }));
       navigate(`/classwork/${classId}`);
       toast("Classwork Assigned");
+      setFormButtonDisabled(true);
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
@@ -155,12 +173,14 @@ const ClassWorkScreen = () => {
                 </Form.Group>
                 <Form.Group controlId="duedate">
                   <Form.Label>Due Date</Form.Label>
-                  <Form.Control 
-                    type='text' 
-                    placeholder="Enter Work Due Date" 
-                    value={duedate} 
-                    onChange={(e) => setDuedate(e.target.value)}
+                  
+                  <DatePicker
+                    selected={duedate}
+                    onChange={handleDateChange}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="Click to select a date"
                     className="from_mg"
+                    id='datepicker'
                   />
                 </Form.Group>
                 <Form.Group controlId="file">
@@ -173,7 +193,7 @@ const ClassWorkScreen = () => {
                   />
                 </Form.Group>
                 {isLoading && <Loader />}
-                <Button type="submit" variant="primary" className="mt-3" id='create'>
+                <Button type="submit" variant="primary" className="mt-3" id='create' disabled={isFormButtonDisabled}>
                   Create
                 </Button>
               </Form>
